@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: offers-service
+          uri: 'lb://offers-service'
+          predicates:
+            - Path=/api/v1/products/**
+          filters:
+            - StripPrefix= 3
+        - id: users-service
+          uri: 'lb://users-service'
+          predicates:
+            - Path=/api/v1/client/**
+          filters:
+            - StripPrefix= 3
+        - id: orchestra-product-user-service
+          uri: 'lb://orchestra-product-user-service'
+          predicates:
+            - Path=/api/v1/orchestra/**
+          filters:
+            - StripPrefix= 3
+        - id: bff-registry-product-user-service
+          uri: 'lb://bff-registry-product-user-service'
+          predicates:
+            - Path=/api/v1/registry/**
+          filters:
+            - StripPrefix= 3
