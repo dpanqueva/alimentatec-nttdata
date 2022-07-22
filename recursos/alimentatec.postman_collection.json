@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "fac4b948-0f4a-4b4f-b6a3-327830f0671b",
+		"name": "alimentatec",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "gateway",
+			"item": [
+				{
+					"name": "POST product-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codeUser\":1013616358,\r\n    \"codeProduct\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/v1/orchestra/product-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"orchestra",
+								"product-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET userByDocument",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/v1/client/users/cedula/1013616358",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"client",
+								"users",
+								"cedula",
+								"1013616358"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/v1/products/offers/1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"offers",
+								"1234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST assignment-product-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codeUser\":\"1013616359\",\r\n    \"name\":\"Diego Panqueva\",\r\n    \"email\":\"xlrv@gmail.com\",\r\n    \"codePrincipalProduct\":\"ad212s2\",\r\n    \"namePrincipalProduct\":\"principal\",\r\n    \"nameSecondaryProduct\":\"\",\r\n    \"codeSecondaryProduct\":\"\",\r\n    \"invoice\":10.89,\r\n    \"snEnable\":\"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/v1/registry/assignment-product-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"registry",
+								"assignment-product-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

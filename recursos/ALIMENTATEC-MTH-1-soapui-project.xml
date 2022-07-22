@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="36a18eb5-abe7-4b73-86c1-f7620a985c52" activeEnvironment="Default" name="ALIMENTATEC-MTH_1" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="2f0a7657-9769-449d-be3e-4aec91562479" wsaVersion="NONE" name="MTHSoap" type="wsdl" bindingName="{http://tempuri.org/}MTHSoap" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/dpanquev/OneDrive%20-%20everis/Documentos/proyectos/alimentatec/documentacion/MTH_1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/dpanquev/OneDrive%20-%20everis/Documentos/proyectos/alimentatec/documentacion/MTH_1.wsdl"><con:part><con:url>file:/C:/Users/dpanquev/OneDrive%20-%20everis/Documentos/proyectos/alimentatec/documentacion/MTH_1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NotificaConsultaSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TelOrigen" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TelDestino" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MensajeSMS" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificaConsultaSMSResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="EnvioSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TelOrigen" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TelDestino" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MensajeSMS" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnvioSMSResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="OperacionMTH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dni" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OperacionMTHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperacionMTHResult" type="tns:MTHResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MTHResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="secondaryOfferId" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="secondaryOfferName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="secondaryOfferPrice" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MTHResponse" nillable="true" type="tns:MTHResponse"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NotificaConsultaSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:NotificaConsultaSMS"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:NotificaConsultaSMSResponse"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:EnvioSMS"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:EnvioSMSResponse"/>
+  </wsdl:message>
+  <wsdl:message name="OperacionMTHSoapIn">
+    <wsdl:part name="parameters" element="tns:OperacionMTH"/>
+  </wsdl:message>
+  <wsdl:message name="OperacionMTHSoapOut">
+    <wsdl:part name="parameters" element="tns:OperacionMTHResponse"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSHttpGetIn">
+    <wsdl:part name="Login" type="s:string"/>
+    <wsdl:part name="Password" type="s:string"/>
+    <wsdl:part name="TelOrigen" type="s:string"/>
+    <wsdl:part name="TelDestino" type="s:string"/>
+    <wsdl:part name="MensajeSMS" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSHttpGetOut"/>
+  <wsdl:message name="EnvioSMSHttpGetIn">
+    <wsdl:part name="Login" type="s:string"/>
+    <wsdl:part name="Password" type="s:string"/>
+    <wsdl:part name="TelOrigen" type="s:string"/>
+    <wsdl:part name="TelDestino" type="s:string"/>
+    <wsdl:part name="MensajeSMS" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioSMSHttpGetOut"/>
+  <wsdl:message name="OperacionMTHHttpGetIn">
+    <wsdl:part name="dni" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="OperacionMTHHttpGetOut">
+    <wsdl:part name="Body" element="tns:MTHResponse"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSHttpPostIn">
+    <wsdl:part name="Login" type="s:string"/>
+    <wsdl:part name="Password" type="s:string"/>
+    <wsdl:part name="TelOrigen" type="s:string"/>
+    <wsdl:part name="TelDestino" type="s:string"/>
+    <wsdl:part name="MensajeSMS" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSHttpPostOut"/>
+  <wsdl:message name="EnvioSMSHttpPostIn">
+    <wsdl:part name="Login" type="s:string"/>
+    <wsdl:part name="Password" type="s:string"/>
+    <wsdl:part name="TelOrigen" type="s:string"/>
+    <wsdl:part name="TelDestino" type="s:string"/>
+    <wsdl:part name="MensajeSMS" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioSMSHttpPostOut"/>
+  <wsdl:message name="OperacionMTHHttpPostIn">
+    <wsdl:part name="dni" type="s:string"/>
+    <wsdl:part name="to" type="s:string"/>
+    <wsdl:part name="text" type="s:string"/>
+    <wsdl:part name="source" type="s:string"/>
+    <wsdl:part name="user" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="OperacionMTHHttpPostOut">
+    <wsdl:part name="Body" element="tns:MTHResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="MTHSoap">
+    <wsdl:operation name="NotificaConsultaSMS">
+      <wsdl:input message="tns:NotificaConsultaSMSSoapIn"/>
+      <wsdl:output message="tns:NotificaConsultaSMSSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <wsdl:input message="tns:EnvioSMSSoapIn"/>
+      <wsdl:output message="tns:EnvioSMSSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <wsdl:input message="tns:OperacionMTHSoapIn"/>
+      <wsdl:output message="tns:OperacionMTHSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MTHHttpGet">
+    <wsdl:operation name="NotificaConsultaSMS">
+      <wsdl:input message="tns:NotificaConsultaSMSHttpGetIn"/>
+      <wsdl:output message="tns:NotificaConsultaSMSHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <wsdl:input message="tns:EnvioSMSHttpGetIn"/>
+      <wsdl:output message="tns:EnvioSMSHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <wsdl:input message="tns:OperacionMTHHttpGetIn"/>
+      <wsdl:output message="tns:OperacionMTHHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MTHHttpPost">
+    <wsdl:operation name="NotificaConsultaSMS">
+      <wsdl:input message="tns:NotificaConsultaSMSHttpPostIn"/>
+      <wsdl:output message="tns:NotificaConsultaSMSHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <wsdl:input message="tns:EnvioSMSHttpPostIn"/>
+      <wsdl:output message="tns:EnvioSMSHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <wsdl:input message="tns:OperacionMTHHttpPostIn"/>
+      <wsdl:output message="tns:OperacionMTHHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MTHSoap" type="tns:MTHSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NotificaConsultaSMS">
+      <soap:operation soapAction="http://tempuri.org/NotificaConsultaSMS" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <soap:operation soapAction="http://tempuri.org/EnvioSMS" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <soap:operation soapAction="http://tempuri.org/OperacionMTH" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTHSoap12" type="tns:MTHSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NotificaConsultaSMS">
+      <soap12:operation soapAction="http://tempuri.org/NotificaConsultaSMS" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <soap12:operation soapAction="http://tempuri.org/EnvioSMS" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <soap12:operation soapAction="http://tempuri.org/OperacionMTH" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTHHttpGet" type="tns:MTHHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="NotificaConsultaSMS">
+      <http:operation location="/NotificaConsultaSMS"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <http:operation location="/EnvioSMS"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <http:operation location="/OperacionMTH"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTHHttpPost" type="tns:MTHHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="NotificaConsultaSMS">
+      <http:operation location="/NotificaConsultaSMS"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <http:operation location="/EnvioSMS"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <http:operation location="/OperacionMTH"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MTH">
+    <wsdl:port name="MTHSoap" binding="tns:MTHSoap">
+      <soap:address location="http://prodsweb07/WSMTH/MTH.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="MTHSoap12" binding="tns:MTHSoap12">
+      <soap12:address location="http://prodsweb07/WSMTH/MTH.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="MTHHttpGet" binding="tns:MTHHttpGet">
+      <http:address location="http://prodsweb07/WSMTH/MTH.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="MTHHttpPost" binding="tns:MTHHttpPost">
+      <http:address location="http://prodsweb07/WSMTH/MTH.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://BOG-F0QQ893:2030/SecondaryOffer</con:endpoint><con:endpoint>http://BOG-F0QQ893:2031/SecondaryOffer</con:endpoint><con:endpoint>http://prodsweb07/WSMTH/MTH.asmx</con:endpoint></con:endpoints><con:operation id="ce51afd9-68fd-4d34-b11a-c35d6da80859" isOneWay="false" action="http://tempuri.org/EnvioSMS" name="EnvioSMS" bindingOperationName="EnvioSMS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bfe2005e-f8b2-45fa-abcd-bc29bef4a7bb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://prodsweb07/WSMTH/MTH.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:EnvioSMS>\r
+         <!--Optional:-->\r
+         <tem:Login>?</tem:Login>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:TelOrigen>?</tem:TelOrigen>\r
+         <!--Optional:-->\r
+         <tem:TelDestino>?</tem:TelDestino>\r
+         <!--Optional:-->\r
+         <tem:MensajeSMS>?</tem:MensajeSMS>\r
+      </tem:EnvioSMS>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/EnvioSMS"/></con:call></con:operation><con:operation id="afe8e1a5-70e0-4e54-8e3b-b2581626d00c" isOneWay="false" action="http://tempuri.org/NotificaConsultaSMS" name="NotificaConsultaSMS" bindingOperationName="NotificaConsultaSMS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="195a7023-4dcf-4b23-b6c0-1808a2e14742" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://prodsweb07/WSMTH/MTH.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:NotificaConsultaSMS>\r
+         <!--Optional:-->\r
+         <tem:Login>?</tem:Login>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:TelOrigen>?</tem:TelOrigen>\r
+         <!--Optional:-->\r
+         <tem:TelDestino>?</tem:TelDestino>\r
+         <!--Optional:-->\r
+         <tem:MensajeSMS>?</tem:MensajeSMS>\r
+      </tem:NotificaConsultaSMS>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/NotificaConsultaSMS"/></con:call></con:operation><con:operation id="099afd55-7cd7-4e08-ae28-8c432e436d3b" isOneWay="false" action="http://tempuri.org/OperacionMTH" name="OperacionMTH" bindingOperationName="OperacionMTH" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2259dc02-3f9a-4a72-abc3-ce7b937515e1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://prodsweb07/WSMTH/MTH.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:OperacionMTH>\r
+         <!--Optional:-->\r
+         <tem:dni>?</tem:dni>\r
+      </tem:OperacionMTH>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/OperacionMTH"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="a3e60c5f-8c9b-46c6-a789-f01c684071ad" wsaVersion="NONE" name="MTHSoap12" type="wsdl" bindingName="{http://tempuri.org/}MTHSoap12" soapVersion="1_2" anonymous="optional" definition="file:/C:/Users/dpanquev/OneDrive%20-%20everis/Documentos/proyectos/alimentatec/documentacion/MTH_1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\dpanquev\OneDrive%20-%20everis\Documentos\proyectos\alimentatec\documentacion\MTH_1.wsdl"><con:part><con:url>file:\C:\Users\dpanquev\OneDrive%20-%20everis\Documentos\proyectos\alimentatec\documentacion\MTH_1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NotificaConsultaSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TelOrigen" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TelDestino" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MensajeSMS" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificaConsultaSMSResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="EnvioSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TelOrigen" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="TelDestino" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="MensajeSMS" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnvioSMSResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="OperacionMTH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dni" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OperacionMTHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperacionMTHResult" type="tns:MTHResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MTHResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="secondaryOfferId" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="secondaryOfferName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="secondaryOfferPrice" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MTHResponse" nillable="true" type="tns:MTHResponse"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NotificaConsultaSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:NotificaConsultaSMS"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:NotificaConsultaSMSResponse"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:EnvioSMS"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:EnvioSMSResponse"/>
+  </wsdl:message>
+  <wsdl:message name="OperacionMTHSoapIn">
+    <wsdl:part name="parameters" element="tns:OperacionMTH"/>
+  </wsdl:message>
+  <wsdl:message name="OperacionMTHSoapOut">
+    <wsdl:part name="parameters" element="tns:OperacionMTHResponse"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSHttpGetIn">
+    <wsdl:part name="Login" type="s:string"/>
+    <wsdl:part name="Password" type="s:string"/>
+    <wsdl:part name="TelOrigen" type="s:string"/>
+    <wsdl:part name="TelDestino" type="s:string"/>
+    <wsdl:part name="MensajeSMS" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSHttpGetOut"/>
+  <wsdl:message name="EnvioSMSHttpGetIn">
+    <wsdl:part name="Login" type="s:string"/>
+    <wsdl:part name="Password" type="s:string"/>
+    <wsdl:part name="TelOrigen" type="s:string"/>
+    <wsdl:part name="TelDestino" type="s:string"/>
+    <wsdl:part name="MensajeSMS" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioSMSHttpGetOut"/>
+  <wsdl:message name="OperacionMTHHttpGetIn">
+    <wsdl:part name="dni" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="OperacionMTHHttpGetOut">
+    <wsdl:part name="Body" element="tns:MTHResponse"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSHttpPostIn">
+    <wsdl:part name="Login" type="s:string"/>
+    <wsdl:part name="Password" type="s:string"/>
+    <wsdl:part name="TelOrigen" type="s:string"/>
+    <wsdl:part name="TelDestino" type="s:string"/>
+    <wsdl:part name="MensajeSMS" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="NotificaConsultaSMSHttpPostOut"/>
+  <wsdl:message name="EnvioSMSHttpPostIn">
+    <wsdl:part name="Login" type="s:string"/>
+    <wsdl:part name="Password" type="s:string"/>
+    <wsdl:part name="TelOrigen" type="s:string"/>
+    <wsdl:part name="TelDestino" type="s:string"/>
+    <wsdl:part name="MensajeSMS" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="EnvioSMSHttpPostOut"/>
+  <wsdl:message name="OperacionMTHHttpPostIn">
+    <wsdl:part name="dni" type="s:string"/>
+    <wsdl:part name="to" type="s:string"/>
+    <wsdl:part name="text" type="s:string"/>
+    <wsdl:part name="source" type="s:string"/>
+    <wsdl:part name="user" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="OperacionMTHHttpPostOut">
+    <wsdl:part name="Body" element="tns:MTHResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="MTHSoap">
+    <wsdl:operation name="NotificaConsultaSMS">
+      <wsdl:input message="tns:NotificaConsultaSMSSoapIn"/>
+      <wsdl:output message="tns:NotificaConsultaSMSSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <wsdl:input message="tns:EnvioSMSSoapIn"/>
+      <wsdl:output message="tns:EnvioSMSSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <wsdl:input message="tns:OperacionMTHSoapIn"/>
+      <wsdl:output message="tns:OperacionMTHSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MTHHttpGet">
+    <wsdl:operation name="NotificaConsultaSMS">
+      <wsdl:input message="tns:NotificaConsultaSMSHttpGetIn"/>
+      <wsdl:output message="tns:NotificaConsultaSMSHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <wsdl:input message="tns:EnvioSMSHttpGetIn"/>
+      <wsdl:output message="tns:EnvioSMSHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <wsdl:input message="tns:OperacionMTHHttpGetIn"/>
+      <wsdl:output message="tns:OperacionMTHHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MTHHttpPost">
+    <wsdl:operation name="NotificaConsultaSMS">
+      <wsdl:input message="tns:NotificaConsultaSMSHttpPostIn"/>
+      <wsdl:output message="tns:NotificaConsultaSMSHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <wsdl:input message="tns:EnvioSMSHttpPostIn"/>
+      <wsdl:output message="tns:EnvioSMSHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <wsdl:input message="tns:OperacionMTHHttpPostIn"/>
+      <wsdl:output message="tns:OperacionMTHHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MTHSoap" type="tns:MTHSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NotificaConsultaSMS">
+      <soap:operation soapAction="http://tempuri.org/NotificaConsultaSMS" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <soap:operation soapAction="http://tempuri.org/EnvioSMS" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <soap:operation soapAction="http://tempuri.org/OperacionMTH" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTHSoap12" type="tns:MTHSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NotificaConsultaSMS">
+      <soap12:operation soapAction="http://tempuri.org/NotificaConsultaSMS" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <soap12:operation soapAction="http://tempuri.org/EnvioSMS" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <soap12:operation soapAction="http://tempuri.org/OperacionMTH" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTHHttpGet" type="tns:MTHHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="NotificaConsultaSMS">
+      <http:operation location="/NotificaConsultaSMS"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <http:operation location="/EnvioSMS"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <http:operation location="/OperacionMTH"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTHHttpPost" type="tns:MTHHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="NotificaConsultaSMS">
+      <http:operation location="/NotificaConsultaSMS"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output/>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioSMS">
+      <http:operation location="/EnvioSMS"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output/>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionMTH">
+      <http:operation location="/OperacionMTH"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MTH">
+    <wsdl:port name="MTHSoap" binding="tns:MTHSoap">
+      <soap:address location="http://prodsweb07/WSMTH/MTH.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="MTHSoap12" binding="tns:MTHSoap12">
+      <soap12:address location="http://prodsweb07/WSMTH/MTH.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="MTHHttpGet" binding="tns:MTHHttpGet">
+      <http:address location="http://prodsweb07/WSMTH/MTH.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="MTHHttpPost" binding="tns:MTHHttpPost">
+      <http:address location="http://prodsweb07/WSMTH/MTH.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://prodsweb07/WSMTH/MTH.asmx</con:endpoint></con:endpoints><con:operation id="98e2e42a-1f4a-4c06-99ee-d5dc253cb492" isOneWay="false" action="http://tempuri.org/EnvioSMS" name="EnvioSMS" bindingOperationName="EnvioSMS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a9bc803d-5064-433d-ba6a-704fd9a8bc34" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://prodsweb07/WSMTH/MTH.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:EnvioSMS>\r
+         <!--Optional:-->\r
+         <tem:Login>?</tem:Login>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:TelOrigen>?</tem:TelOrigen>\r
+         <!--Optional:-->\r
+         <tem:TelDestino>?</tem:TelDestino>\r
+         <!--Optional:-->\r
+         <tem:MensajeSMS>?</tem:MensajeSMS>\r
+      </tem:EnvioSMS>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/MTHSoap/EnvioSMSRequest"/></con:call></con:operation><con:operation id="7f4baa9d-ed4e-482c-a6b9-aac802c6b9af" isOneWay="false" action="http://tempuri.org/NotificaConsultaSMS" name="NotificaConsultaSMS" bindingOperationName="NotificaConsultaSMS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a484dc8f-0792-44f8-9847-8cf5b2397a85" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://prodsweb07/WSMTH/MTH.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:NotificaConsultaSMS>\r
+         <!--Optional:-->\r
+         <tem:Login>?</tem:Login>\r
+         <!--Optional:-->\r
+         <tem:Password>?</tem:Password>\r
+         <!--Optional:-->\r
+         <tem:TelOrigen>?</tem:TelOrigen>\r
+         <!--Optional:-->\r
+         <tem:TelDestino>?</tem:TelDestino>\r
+         <!--Optional:-->\r
+         <tem:MensajeSMS>?</tem:MensajeSMS>\r
+      </tem:NotificaConsultaSMS>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/MTHSoap/NotificaConsultaSMSRequest"/></con:call></con:operation><con:operation id="99f1ab57-ecb2-4af5-bd0f-8ba268bd19d2" isOneWay="false" action="http://tempuri.org/OperacionMTH" name="OperacionMTH" bindingOperationName="OperacionMTH" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4f39ce7f-2502-48cd-8f02-f2755541f7b5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://prodsweb07/WSMTH/MTH.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:OperacionMTH>\r
+         <!--Optional:-->\r
+         <tem:dni>?</tem:dni>\r
+      </tem:OperacionMTH>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/MTHSoap/OperacionMTHRequest"/></con:call></con:operation></con:interface><con:mockService id="51e28510-635c-468b-8542-e4d6786c24cf" port="2030" path="/SecondaryOffer" host="localhost" name="MTHSoap MockService-1" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="EnvioSMS" id="6088c4b8-6de6-4bfa-b53b-914d2d9a0c70" interface="MTHSoap" operation="EnvioSMS"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="3f809502-812e-4d28-b2c3-7930ee9282d8" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:EnvioSMSResponse/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/EnvioSMS"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="NotificaConsultaSMS" id="1f686ba6-f3ef-409e-a7ed-56a57a10d3f9" interface="MTHSoap" operation="NotificaConsultaSMS"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="e1b9d38e-35db-4e67-b6c6-b28207de2182" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:NotificaConsultaSMSResponse/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/NotificaConsultaSMS"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="OperacionMTH" id="72a0a630-9f4e-4e09-af0d-b7de22a57894" interface="MTHSoap" operation="OperacionMTH"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="6d6299ba-e0c4-41d7-bbc3-a86e1d7d8c0d" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:OperacionMTHResponse>
+         <!--Optional:-->
+         <tem:OperacionMTHResult>
+            <!--Optional:-->
+            <tem:secondaryOfferId>?</tem:secondaryOfferId>
+            <!--Optional:-->
+            <tem:secondaryOfferName>?</tem:secondaryOfferName>
+            <!--Optional:-->
+            <tem:secondaryOfferPrice>?</tem:secondaryOfferPrice>
+         </tem:OperacionMTHResult>
+      </tem:OperacionMTHResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/OperacionMTH"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:mockService id="429d6b7e-2e4c-4ea7-b2a0-0a28ef5eaae0" port="2031" path="/SecondaryOffer" host="localhost" name="MTHSoap MockService-alimentatec" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="OperacionMTH" id="8f053652-787d-4596-9bb5-15b33be0bddf" interface="MTHSoap" operation="OperacionMTH"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="de4a9a10-c23e-4969-b3cc-d8a3decfc86a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:OperacionMTHResponse>
+         <!--Optional:-->
+         <tem:OperacionMTHResult>
+            <!--Optional:-->
+            <tem:secondaryOfferId>TV3215</tem:secondaryOfferId>
+            <!--Optional:-->
+            <tem:secondaryOfferName>Televisor Sony</tem:secondaryOfferName>
+            <!--Optional:-->
+            <tem:secondaryOfferPrice>35000</tem:secondaryOfferPrice>
+         </tem:OperacionMTHResult>
+      </tem:OperacionMTHResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/OperacionMTH"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
